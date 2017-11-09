@@ -13,7 +13,9 @@ class ArtistaSerializer(serializers.Serializer):
     .
     .
 """
+
+
 class ArtistaSerializer(serializers.Serializer):
-    model=Artista
-
-
+    class Meta:
+        model = Artista
+        fields = ('__all__')
