@@ -18,4 +18,4 @@ class ArtistaSerializer(serializers.Serializer):
 class ArtistaSerializer(serializers.Serializer):
     class Meta:
         model = Artista
-        exclude=('genero_primario',)
+        fields = ('__all__')
