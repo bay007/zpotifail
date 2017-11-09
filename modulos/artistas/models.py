@@ -12,6 +12,7 @@ class Artista(models.Model):  # debe ser en plural la clase
         ('jazz','Jazz'),
         ('clasica','Clásica'),
         ('ranchero','Ranchero'),
+        ('rock','Rock'),
     )
 
     # checar por que uuid no se llama cono funcion
@@ -26,6 +27,3 @@ class Artista(models.Model):  # debe ser en plural la clase
 
     def __str__(self):
         return self.nombre
-
-    def __unicode__(self):
-        return
