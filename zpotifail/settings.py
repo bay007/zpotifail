@@ -40,7 +40,8 @@ INSTALLED_APPS = [
     'modulos.albumes',
     'modulos.artistas',
     'modulos.canciones',
-    'modulos.usuarios'
+    'modulos.usuarios',
+    'rest_framework'
 ]
 
 MIDDLEWARE = [
