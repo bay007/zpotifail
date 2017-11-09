@@ -80,9 +80,9 @@ WSGI_APPLICATION = 'zpotifail.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'pokemon',
-        'USER': 'postgres',
-        'PASSWORD': 'H#aykPJuj3JgM_WH',
+        'NAME': 'espotifail',
+        'USER': 'espotifail',
+        'PASSWORD': 'E#aykPJuj3JgM_WH',
         'HOST': '127.0.0.1',
         'PORT': '5432'
     }
