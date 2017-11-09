@@ -25,18 +25,20 @@ class ListArtistas(APIView):
         if artista_desde_cliente.is_valid():
             artista_desde_cliente.save()
             return Response(artista_desde_cliente.data,
-                     status=status.HTTP_201_CREATED)
+                            status=status.HTTP_201_CREATED)
         else:
             return Response(artista_desde_cliente.errors,
-                     status=status.HTTP_400_BAD_REQUEST)
+                            status=status.HTTP_400_BAD_REQUEST)
 
 
 """
 esto solo traera un solo artista con todos los verbos http
 """
-class DetailArtist(APIView):
-    def get(self, request):
-        pass
+class DetailArtistas(APIView):
+    def get(self, request, identificador):
+        artista = Artista.objects.get(pk=identificador)
+        artista_para_la_vista=ArtistaSerializer(artista)
+        return Response(artista_para_la_vista.data,status.HTTP_200_OK)
 
     def put(self):
         pass
