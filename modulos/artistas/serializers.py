@@ -14,7 +14,9 @@ class ArtistaSerializer(serializers.Serializer):
     .
 """
 
-#Se debe especificar que es de tipo MODEL, si no la vista retornara vacio
+# Se debe especificar que es de tipo MODEL, si no la vista retornara vacio
+
+
 class ArtistaSerializer(serializers.ModelSerializer):
     class Meta:
         model = Artista

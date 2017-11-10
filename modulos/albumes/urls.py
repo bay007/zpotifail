@@ -2,6 +2,6 @@ from django.conf.urls import url
 from modulos.albumes.views import ListGenericAlbum, DetailGenericAlbum
 
 urlpatterns = [
-    url(r'^albums/$', ListGenericAlbum.as_view(), name="listAlbums"),
-    url(r'^albums/(?P<pk>[0-9a-f-])/$',DetailGenericAlbum.as_view(), name="detailAlbums"),
+    url(r'^albumes/$', ListGenericAlbum.as_view(), name="listAlbumes"),
+    url(r'^albumes/(?P<pk>[0-9a-f-])/$',DetailGenericAlbum.as_view(), name="detailAlbumes"),
 ]

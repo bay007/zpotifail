@@ -20,4 +20,5 @@ urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^api/v1/', include("modulos.artistas.urls",namespace="artistas")),
     url(r'^api/v1/', include('modulos.albumes.urls', namespace="albumes")),
+    url(r'^api/v1/', include('modulos.canciones.urls', namespace="canciones")),
 ]
