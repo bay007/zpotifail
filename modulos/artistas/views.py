@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import get_object_or_404
 from modulos.artistas.models import Artista
 from modulos.artistas.serializers import ArtistaSerializer
 from rest_framework import status
@@ -34,11 +34,13 @@ class ListArtistas(APIView):
 """
 esto solo traera un solo artista con todos los verbos http
 """
+
+
 class DetailArtistas(APIView):
     def get(self, request, identificador):
-        artista = Artista.objects.get(pk=identificador)
-        artista_para_la_vista=ArtistaSerializer(artista)
-        return Response(artista_para_la_vista.data,status.HTTP_200_OK)
+        artista = get_object_or_404(Artista, pk=identificador)
+        artista_para_la_vista = ArtistaSerializer(artista)
+        return Response(artista_para_la_vista.data, status.HTTP_200_OK)
 
     def put(self):
         pass

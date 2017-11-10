@@ -19,4 +19,5 @@ from django.contrib import admin
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^api/v1/', include("modulos.artistas.urls",namespace="artistas")),
+    url(r'^api/v1/', include('modulos.albumes.urls', namespace="albumes")),
 ]
