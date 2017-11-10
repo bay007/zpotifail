@@ -11,4 +11,4 @@ normal>generic view set (cuando no tienes un modelo) > model view sets
 
 class CancionViewSet(viewsets.ModelViewSet):
     serializer_class = CancionModelSerializer
-    queryset = Cancion.objects.all()
+    queryset = Cancion.objects.all() #asi todo el filtrado se hace en el web server y no en el gestor de base de datos
