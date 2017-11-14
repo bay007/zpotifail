@@ -5,6 +5,9 @@ from rest_framework import status
 from rest_framework.response import Response
 from rest_framework.views import APIView
 
+from modulos.artistas.permissions import Group_B_Permissions
+from rest_framework.permissions import IsAuthenticated
+
 # Create your views here.
 """
 por convension se pone List
@@ -14,6 +17,7 @@ esto traera todos los artistas
 
 
 class ListArtistas(APIView):
+    permission_classes=(IsAuthenticated,Group_B_Permissions)
     def get(self, request):
         artistas_db = Artista.objects.all()  # obtenemos todos los artistas
         artistas_para_mandar_a_la_vista = ArtistaSerializer(
