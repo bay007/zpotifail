@@ -81,10 +81,10 @@ WSGI_APPLICATION = 'zpotifail.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'espotifail',
-        'USER': 'espotifail',
-        'PASSWORD': 'E#aykPJuj3JgM_WH',
-        'HOST': '127.0.0.1',
+        'NAME': 'egpahrez',
+        'USER': 'egpahrez',
+        'PASSWORD': 'N3C0FlJ_RFkirYDh3rncxwlbaIPvNvTF',
+        'HOST': 'baasu.db.elephantsql.com',
         'PORT': '5432'
     }
 }
@@ -122,6 +122,7 @@ USE_L10N = True
 
 USE_TZ = True
 
+AUTH_USER_MODEL = 'usuarios.Usuario'
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.11/howto/static-files/
@@ -129,7 +130,7 @@ USE_TZ = True
 STATIC_URL = '/static/'
 
 
-######################################3
+######################################
 PAISES = (
     ("ALB", "Albania"),
     ("DZA", "Algeria"),
