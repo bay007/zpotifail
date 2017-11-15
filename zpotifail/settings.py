@@ -41,7 +41,8 @@ INSTALLED_APPS = [
     'modulos.artistas',
     'modulos.canciones',
     'modulos.usuarios',
-    'rest_framework'
+    'rest_framework',
+    'django_filters',
 ]
 
 MIDDLEWARE = [
@@ -90,6 +91,9 @@ DATABASES = {
 }
 
 REST_FRAMEWORK = {
+    'DEFAULT_FILTER_BACKENDS': (
+        'django_filters.rest_framework.DjangoFilterBackend',
+    ),
     'DEFAULT_PERMISSION_CLASSES': (
         'rest_framework.permissions.AllowAny',
     ),
