@@ -7,6 +7,7 @@ from rest_framework.views import APIView
 
 from modulos.artistas.permissions import Group_B_Permissions
 from rest_framework.permissions import IsAuthenticated
+from django.db.models import Q
 
 # Create your views here.
 """
@@ -17,9 +18,26 @@ esto traera todos los artistas
 
 
 class ListArtistas(APIView):
-    permission_classes=(IsAuthenticated,Group_B_Permissions)
+    #permission_classes = (IsAuthenticated, Group_B_Permissions)
+
+    def _filterring(self, params):
+        genero = params.get("genero", "")
+        nombre = params.get("nombre", "")
+        is_band = False if params.get("is_band", "-").lower()=="true" else True
+        print(is_band)
+
+        queryset = artistas = Artista.objects.filter((Q(genero_primario__iexact=genero) & Q(nombre__icontains=nombre))|Q(is_band=is_band))
+        print(queryset.query.__str__())
+        return queryset
+
     def get(self, request):
-        artistas_db = Artista.objects.all()  # obtenemos todos los artistas
+        
+        if request.query_params:
+            print(request.query_params)
+            artistas_db=self._filterring(request.query_params)
+        else:
+            artistas_db = Artista.objects.all()  # obtenemos todos los artistas
+
         artistas_para_mandar_a_la_vista = ArtistaSerializer(
             artistas_db, many=True)  # retorna lo que te pase en una lista
         return Response(artistas_para_mandar_a_la_vista.data, status=status.HTTP_200_OK)
