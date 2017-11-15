@@ -8,6 +8,6 @@ class Group_B_Permissions(BasePermission):
         return Group.objects.get(name=group_name).user_set.filter(id=user.id).exists()
 
     def has_permission(self, request, view):
-        if self._is_in_group("grupo_B", request.user):
+        if self._is_in_group("grupo_b", request.user):
             return True
         return False
