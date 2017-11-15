@@ -7,6 +7,7 @@ from rest_framework.views import APIView
 
 from modulos.artistas.permissions import Group_B_Permissions
 from rest_framework.permissions import IsAuthenticated
+from oauth2_provider.contrib.rest_framework import TokenHasReadWriteScope,TokenHasScope
 
 # Create your views here.
 """
@@ -17,7 +18,7 @@ esto traera todos los artistas
 
 
 class ListArtistas(APIView):
-    permission_classes=(IsAuthenticated,Group_B_Permissions)
+    permission_classes=(TokenHasReadWriteScope,TokenHasScope)
     def get(self, request):
         artistas_db = Artista.objects.all()  # obtenemos todos los artistas
         artistas_para_mandar_a_la_vista = ArtistaSerializer(
