@@ -18,7 +18,7 @@ esto traera todos los artistas
 
 
 class ListArtistas(APIView):
-    permission_classes=(TokenHasReadWriteScope,TokenHasScope)
+    permission_classes=(IsAuthenticated,TokenHasReadWriteScope,)
     def get(self, request):
         artistas_db = Artista.objects.all()  # obtenemos todos los artistas
         artistas_para_mandar_a_la_vista = ArtistaSerializer(
