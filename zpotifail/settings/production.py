@@ -4,7 +4,7 @@ import os
 
 DEBUG=True
 
-ALLOWED_HOST=["zpotifail.herokuapp.com"]
+ALLOWED_HOSTS=["zpotifail.herokuapp.com"]
 
 SECRET_KEY = os.getenv("SECRET_KEY",None)
 
