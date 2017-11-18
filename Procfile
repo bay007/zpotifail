@@ -1,0 +1,1 @@
+web: gunicorn zpotifail.wsgi --log-file -
