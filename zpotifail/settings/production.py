@@ -1,11 +1,12 @@
 from .base import *
-
 import dj_database_url
-
+import os
 
 DEBUG=False
 
-ALLOWED_HOST=["*"]
+ALLOWED_HOST=["https://zpotifail.herokuapp.com"]
+
+SECRET_KEY = os.getenv("SECRET_KEY",None)
 
 DATABASES = dict()
 
