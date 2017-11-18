@@ -15,17 +15,7 @@ import os
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
-
-# Quick-start development settings - unsuitable for production
-# See https://docs.djangoproject.com/en/1.11/howto/deployment/checklist/
-
-# SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = '%a-8=sdv0^++)=)05i9!5-u$!ve8lfwh89q#l=jja9u+7+8ppu'
-
-# SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
-
-ALLOWED_HOSTS = []
+## quitar debug, secretkey, allowed host y databases 
 
 
 # Application definition
@@ -76,20 +66,6 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'zpotifail.wsgi.application'
 
-
-# Database
-# https://docs.djangoproject.com/en/1.11/ref/settings/#databases
-
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'egpahrez',
-        'USER': 'egpahrez',
-        'PASSWORD': 'N3C0FlJ_RFkirYDh3rncxwlbaIPvNvTF',
-        'HOST': 'baasu.db.elephantsql.com',
-        'PORT': '5432'
-    }
-}
 
 REST_FRAMEWORK = {
     'DEFAULT_FILTER_BACKENDS': (
