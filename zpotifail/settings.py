@@ -25,7 +25,7 @@ SECRET_KEY = '%a-8=sdv0^++)=)05i9!5-u$!ve8lfwh89q#l=jja9u+7+8ppu'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ["ec2-52-91-188-212.compute-1.amazonaws.com"]
 
 
 # Application definition
@@ -86,7 +86,7 @@ DATABASES = {
         'NAME': 'egpahrez',
         'USER': 'egpahrez',
         'PASSWORD': 'N3C0FlJ_RFkirYDh3rncxwlbaIPvNvTF',
-        'HOST': 'baasu.db.elephantsql.com',
+        'HOST': 'ec2-52-91-188-212.compute-1.amazonaws.com',
         'PORT': '5432'
     }
 }
