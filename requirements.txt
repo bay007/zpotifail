@@ -11,7 +11,7 @@ gunicorn==19.7.1
 idna==2.6
 oauthlib==2.0.6
 psycopg2==2.7.3.2
-PyJWT==1.5.3
+PyJWT==2.4.0
 pytz==2017.3
 urllib3==1.22
 whitenoise==3.3.1
